@@ -1,0 +1,79 @@
+1. Hvað er null og undefined?
+Null og undefined eru týpur sem þýða nokkurn veginn sama hlutinn, breytan hefur ekkert value.
+Null er samt value sem þú gefur breytu en undefined er alltaf sett á breytu ef þú gefur ekkert value.
+
+2. Hvað gerir 'use strict' í JavaScript kóða? 
+"use strict" lætur kóðann virka á nútíma háttinn í staðinn fyrir að nota gamla hluti úr gömlu ES.
+
+3. Hver er munurinn á let, var og const? 
+ var og let eru nokkurn veginn eins EN var hefur ekki block scope,
+ sem þýðir að ef þú declarar var inni í t.d. if statementi eða for loop þá er það enn til fyrir utan if statementið.
+ var declaration er líka alltaf gert efst í föllum, skiptir ekki máli hvar þú skrifar það.
+
+4. Endurskrifaðu eftirfarandi kóða með for lykkjunni.
+let x = 9;
+while (x >= 1) {
+ console.log("hello " + x);
+ x = x - 1;
+}
+
+for (let x = 9; x >= 1; x--)  {
+	console.log("hello " + x);
+}
+
+5. Skilgreindu sama fallið á þrjá mismunandi vegu.
+
+function test() {
+	console.log("Hello Friend");
+}
+
+let test = function() {
+	console.log("Hello Friend");
+}
+
+let test = () => console.log("Hello Friend");
+
+
+6. Útskýrðu hvað eftirfarandi kóði gerir, hvað gera svigarnir?
+ (function() { alert('Hello World'); })();
+
+Kóðinn gerir pop-up sem segir "Hello World".
+Fyrsta settið af svigum heldur utan um fallið og seinna settið kallar á fallið.
+Fallið er ekki geymt í neinni breytu og hefur ekkert nafn.
+
+8. Leystu lið 20 í Lesson 6 (Arrays) á Udacity https://classroom.udacity.com/courses/ud803
+
+var test = [12, 929, 11, 3, 199, 1000, 7, 1, 24, 37, 4,
+    19, 300, 3775, 299, 36, 209, 148, 169, 299,
+    6, 109, 20, 58, 139, 59, 3, 1, 139
+];
+
+test.forEach(function(value,index) {
+    if (value % 3===0) {
+        test[index] += 100;
+    }
+});
+
+console.log(test);
+
+9. Leystu lið 22 í Lesson 6 (Arrays) á Udacity https://classroom.udacity.com/courses/ud803
+
+var bills = [50.23, 19.12, 34.01,
+    100.11, 12.15, 9.90, 29.11, 12.99,
+    10.00, 99.22, 102.20, 100.10, 6.77, 2.22
+];
+
+var totals = bills.map(function(price){
+    price *= 1.15;
+    return Number(price.toFixed(2));
+})
+
+console.log(totals);
+
+10. Skrifaðu forrit í JavaScript sem sprengir staflan (stack overflow).
+
+function explode() {
+	explode();
+}
+
+explode();
